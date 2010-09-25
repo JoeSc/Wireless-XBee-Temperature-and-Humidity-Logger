@@ -26,8 +26,9 @@ def do_stuff(nothing):
 	print xb.addr_16
 	if xb.addr_16 == TEMPLOGGER1_ADDR_16:
 		temp =temp_logger_parse(xb,f)
-		
-	
+		#xbee.send_cmd_remote(ser,"db")	
+		#packet = xbee.find_packet(ser)
+
 
 
 

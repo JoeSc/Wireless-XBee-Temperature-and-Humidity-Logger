@@ -31,8 +31,14 @@ class xbee(object):
 	find_packet = staticmethod(find_packet)
 
 	def send_cmd_remote(serial,cmd):
-		print "DOESNT WORKT"	
-		
+		#print "DOESNT WORK YET"	
+		writebuf=[chr(0x7e),chr(0x0),chr(0x04),chr(0x08),chr(0x01),chr(0x44),chr(0x42),chr(0x70)]
+		serial.write(writebuf)
+
+
+
+
+	send_cmd_remote = staticmethod(send_cmd_remote)
 
 	def __init__(self, arg):
 		self.analog = [0 for x in range(8)]
@@ -84,7 +90,8 @@ class xbee(object):
 				self.supply_voltage =  (p[cnt]<<8) + p[cnt+1]
 				cnt += 2
 				if DEBUG: print "Vcc = " + hex(self.supply_voltage)
-				
+			
+
 
 		else:
 			print 'GOT BAD PACKET'
