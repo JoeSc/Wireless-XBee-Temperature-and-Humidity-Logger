@@ -1,0 +1,7 @@
+rrdtool create crawlspace.rrd --start N --step 10 DS:temp:GAUGE:30:-100:200 DS:humidity:GAUGE:30:0:100 DS:supply_voltage:GAUGE:30:0:5 DS:rssi:GAUGE:30:-100:0 RRA:AVERAGE:0.5:1:60480 RRA:AVERAGE:0.5:180:17520 RRA:AVERAGE:0.5:360:43800
+
+
+
+every 10 seconds for the last week 
+every 30 minutes for the last year
+every hour for the last 5 years
