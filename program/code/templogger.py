@@ -16,7 +16,7 @@ FILENAME = "test.csv"
 
 
 
-
+print "Starting the templogger"
 
 ser = serial.Serial(SERIALPORT, BAUDRATE, timeout=1)
 ser.open()
@@ -31,9 +31,9 @@ def do_stuff(nothing):
         print xb.addr_16
         if xb.addr_16 == TEMPLOGGER1_ADDR_16:
             temp =temp_logger_parse(xb,f)
-            #xbee.send_cmd_remote(ser,"db")	
-            #packet = xbee.find_packet(ser)
-
+            xb.send_cmd_local(ser,"DB")
+            print "STFFF" + str(xb.analog[0])
+            print "OUTSIDE RSSI" + str(xb.rssi)
 
 
 
